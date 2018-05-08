@@ -1,0 +1,17 @@
+{
+    "projectName": "Timesheets Demo",
+    "username": "gamorim@altimetrik.com",
+    "id": "dbed15e0-52e0-11e8-a70e-75e4b39ecff8",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://gamorim1-dev-ed.my.salesforce.com",
+    "workspace": "C:\\Users\\gamorim\\Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}

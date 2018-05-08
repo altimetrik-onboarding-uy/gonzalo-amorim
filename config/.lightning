@@ -1,0 +1,19 @@
+[
+    {
+        "attributes": {
+            "type": "AuraDefinition",
+            "url": "/services/data/v36.0/tooling/sobjects/AuraDefinition/0Adf4000001FI3HCAW"
+        },
+        "Id": "0Adf4000001FI3HCAW",
+        "AuraDefinitionBundleId": "0Abf4000000dmeOCAQ",
+        "AuraDefinitionBundle": {
+            "attributes": {
+                "type": "AuraDefinitionBundle",
+                "url": "/services/data/v36.0/tooling/sobjects/AuraDefinitionBundle/0Abf4000000dmeOCAQ"
+            },
+            "DeveloperName": "generalInformation"
+        },
+        "DefType": "COMPONENT",
+        "Format": "XML"
+    }
+]
