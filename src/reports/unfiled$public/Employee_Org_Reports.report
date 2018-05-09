@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Timesheet__c$Employee__c.Birthdate</field>
+    </columns>
+    <columns>
+        <field>Timesheet__c$Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Timesheet__c$End_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Timesheet__c$Sum_Of_Hours__c</field>
+    </columns>
+    <columns>
+        <field>Timesheet__c$Taxes__c</field>
+    </columns>
+    <columns>
+        <field>Timesheet__c$Status__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Timesheet__c$Employee__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Employee Org Reports</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Employee_Report__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Timesheet__c$Employee__c.Birthdate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,10 @@
+Dear Sir,
+
+Your employee: {!Timesheet__c.Employee__c}.
+
+Has created a new timesheet.
+Please review the approval process and either 'Accept or Reject' the timesheet status.
+
+Thank you.
+
+System.
