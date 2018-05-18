@@ -26,15 +26,15 @@
     </types>
     <types>
         <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>CustomApplication</name>
     </types>
     <types>
         <members>*</members>
         <name>CustomApplicationComponent</name>
-    </types>
-    <types>
-        <members>CustomLabels</members>
-        <name>CustomLabels</name>
     </types>
     <types>
         <members>*</members>
@@ -59,9 +59,9 @@
         <name>FlexiPage</name>
     </types>
     <types>
-        <members>Approval_Process_Trigger-4</members>
+        <members>Approval_Process_Trigger-5</members>
         <members>Send_Email_Timesheet</members>
-        <members>Update_Status-10</members>
+        <members>Update_Status-11</members>
         <name>Flow</name>
     </types>
     <types>
@@ -69,6 +69,7 @@
         <name>FlowDefinition</name>
     </types>
     <types>
+        <members>Timesheet__c-MiniView</members>
         <members>Timesheet__c-Timesheet Layout</members>
         <name>Layout</name>
     </types>
@@ -89,5 +90,5 @@
         <members>Timesheet__c</members>
         <name>Workflow</name>
     </types>
-    <version>36.0</version>
+    <version>42.0</version>
 </Package>

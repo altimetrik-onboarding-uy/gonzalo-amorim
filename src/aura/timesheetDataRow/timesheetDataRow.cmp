@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:registerEvent name="navEvt" type="force:navigateToSObject"/>
+    <aura:attribute name="data" type="Object"/>
+    <tr>
+        <td scope="row" onmouseenter="{!c.miniViewIn}" onmouseleave="{!c.miniViewOut}" id="{!v.data.Id}">
+            <a onclick="{!c.navigate}"><div>{!v.data.Id}</div></a>
+        	<div aura:id="{!'div' + v.data.Id}" id="{!'div' + v.data.Id}" class="slds-visible"></div>
+        </td>
+        <td scope="row"><a onclick="{!c.doEdit}" id="{!v.data.Employee__r.Id}">{!v.data.Employee__r.Name}</a></td>
+        <td scope="row"><div class="slds-truncate"><lightning:formattedDateTime value="{!v.data.Employee__r.Birthdate}" year="numeric" month="long" day="2-digit" /></div></td>
+        <td scope="row">{!v.data.Start_Date__c}</td>
+        <td scope="row">{!v.data.End_Date__c}</td>
+        <td scope="row">{!v.data.Sum_Of_Hours__c}</td>
+        <td scope="row">{!v.data.Gross_Pay__c}</td>              
+        <td scope="row">{!v.data.Taxes__c}</td>
+        <td scope="row">{!v.data.Type__c}</td>
+        <td scope="row">{!v.data.Status__c}</td>
+	</tr>
+</aura:component>

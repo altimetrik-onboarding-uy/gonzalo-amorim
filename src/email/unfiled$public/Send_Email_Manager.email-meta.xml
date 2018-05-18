@@ -7,4 +7,5 @@
     <style>none</style>
     <subject>Submitted Timesheet</subject>
     <type>text</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

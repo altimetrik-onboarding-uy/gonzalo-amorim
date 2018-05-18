@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="mydata" type="Object[]"/>
+    <aura:iteration items="{!v.mydata}" var="data">
+        <c:timesheetDataRow data="{!data}"/>
+	</aura:iteration>
+</aura:component>

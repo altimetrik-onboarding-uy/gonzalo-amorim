@@ -1,0 +1,48 @@
+<aura:component controller="tableListController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="mydata" type="Object[]"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+	<!-- TOGGLE VIEW EVENT -->
+    <aura:handler name="view" event="c:toggleViewUpdate" action="{!c.handleViewUpdate}"/>
+    <aura:attribute name="toggler" type="boolean"/>
+    <aura:registerEvent name="updateView" type="c:toggleViewUpdate"/>
+    <!-- / TOGGLE VIEW EVENT -->
+    <!-- PAGE HEADER -->
+    <c:timesheetsHeader />
+    <!-- / PAGE HEADER -->
+    <div class="slds-grid slds-gutters">
+         <div class="slds-col slds-size_1-of-12">
+                <lightning:input aura:id="inputToggle" type="toggle"
+                            label="Change View"
+                            name="toggleView"
+                            class="slds-p-around--small"
+                            checked="{!v.toggler}"
+                            messageToggleActive="Most Recent"
+                            messageToggleInactive="All"
+                            onchange="{!c.toggleView}"/>
+             </div>
+    </div>
+    <!-- TIMESHEETS TABLE -->
+    <table class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer">
+		<thead>         
+            <tr class="slds-text-heading--small">
+                <th scope="col"><span class="slds-truncate">Timesheet Detail</span></th>
+				<th scope="col"><span class="slds-truncate">Employee's Name</span></th>
+				<th scope="col"><span class="slds-truncate">Employee's Birthdate</span></th>
+				<th scope="col"><span class="slds-truncate">Start Date</span></th>
+				<th scope="col"><span class="slds-truncate">End Date</span></th>
+				<th scope="col"><span class="slds-truncate">Total Hours</span></th>
+				<th scope="col"><span class="slds-truncate">Gross Pay</span></th>
+				<th scope="col"><span class="slds-truncate">Taxes</span></th>
+				<th scope="col"><span class="slds-truncate">Type</span></th>
+				<th scope="col"><span class="slds-truncate">Submitted</span></th>
+			</tr>
+		</thead>
+        <!-- TIMESHEETS BODY - DATA COMPONENT -->
+        <tbody>
+            <c:timesheetData mydata="{!v.mydata}"/>
+		</tbody>
+		<!-- / TIMESHEETS BODY - DATA COMPONENT -->
+	</table>
+    <!-- / TIMESHEETS TABLE -->
+</aura:component>

@@ -14,7 +14,6 @@
     </allowedSubmitters>
     <approvalPageFields>
         <field>Name</field>
-        <field>Owner</field>
         <field>Employee__c</field>
     </approvalPageFields>
     <approvalStep>

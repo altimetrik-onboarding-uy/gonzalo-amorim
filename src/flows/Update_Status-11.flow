@@ -68,7 +68,7 @@
             <label>Update_Status</label>
         </rules>
     </decisions>
-    <interviewLabel>Update_Status-10_InterviewLabel</interviewLabel>
+    <interviewLabel>Update_Status-11_InterviewLabel</interviewLabel>
     <label>Change Status</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -91,7 +91,7 @@
     <processMetadataValues>
         <name>TriggerType</name>
         <value>
-            <stringValue>onAllChanges</stringValue>
+            <stringValue>onCreateOnly</stringValue>
         </value>
     </processMetadataValues>
     <processType>Workflow</processType>

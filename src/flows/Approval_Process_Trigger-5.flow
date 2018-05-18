@@ -97,7 +97,7 @@
             <label>Status Submitted</label>
         </rules>
     </decisions>
-    <interviewLabel>Approval_Process_Trigger-4_InterviewLabel</interviewLabel>
+    <interviewLabel>Approval_Process_Trigger-5_InterviewLabel</interviewLabel>
     <label>Approval Process Trigger</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -115,6 +115,12 @@
         <name>OldObjectVariable</name>
         <value>
             <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>RecursiveCountVariable</name>
+        <value>
+            <elementReference>RecursiveCountVariable</elementReference>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -150,5 +156,13 @@
         <value>
             <elementReference>$Flow.CurrentDateTime</elementReference>
         </value>
+    </variables>
+    <variables>
+        <name>RecursiveCountVariable</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
     </variables>
 </Flow>

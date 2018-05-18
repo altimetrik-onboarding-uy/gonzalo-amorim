@@ -45,6 +45,12 @@
             "xmlName": "AuraDefinitionBundle"
         },
         {
+            "directoryName": "lightningcomponents",
+            "inFolder": false,
+            "metaFile": false,
+            "xmlName": "LightningComponentBundle"
+        },
+        {
             "directoryName": "components",
             "inFolder": false,
             "metaFile": true,
@@ -66,6 +72,13 @@
             "xmlName": "Queue"
         },
         {
+            "directoryName": "CaseSubjectParticles",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "CaseSubjectParticle",
+            "xmlName": "CaseSubjectParticle"
+        },
+        {
             "directoryName": "dataSources",
             "inFolder": false,
             "metaFile": false,
@@ -78,6 +91,13 @@
             "metaFile": false,
             "suffix": "namedCredential",
             "xmlName": "NamedCredential"
+        },
+        {
+            "directoryName": "externalServiceRegistrations",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "externalServiceRegistration",
+            "xmlName": "ExternalServiceRegistration"
         },
         {
             "directoryName": "roles",
@@ -94,11 +114,18 @@
             "xmlName": "Group"
         },
         {
-            "directoryName": "globalPicklists",
+            "directoryName": "globalValueSets",
             "inFolder": false,
             "metaFile": false,
-            "suffix": "globalPicklist",
-            "xmlName": "GlobalPicklist"
+            "suffix": "globalValueSet",
+            "xmlName": "GlobalValueSet"
+        },
+        {
+            "directoryName": "standardValueSets",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "standardValueSet",
+            "xmlName": "StandardValueSet"
         },
         {
             "directoryName": "customPermissions",
@@ -110,6 +137,7 @@
         {
             "childXmlNames": [
                 "CustomField",
+                "Index",
                 "BusinessProcess",
                 "CompactLayout",
                 "RecordType",
@@ -230,6 +258,20 @@
             "xmlName": "CustomApplication"
         },
         {
+            "directoryName": "EmbeddedServiceConfig",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "EmbeddedServiceConfig",
+            "xmlName": "EmbeddedServiceConfig"
+        },
+        {
+            "directoryName": "EmbeddedServiceBranding",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "EmbeddedServiceBranding",
+            "xmlName": "EmbeddedServiceBranding"
+        },
+        {
             "directoryName": "flows",
             "inFolder": false,
             "metaFile": false,
@@ -339,6 +381,20 @@
             "xmlName": "CustomObjectTranslation"
         },
         {
+            "directoryName": "globalValueSetTranslations",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "globalValueSetTranslation",
+            "xmlName": "GlobalValueSetTranslation"
+        },
+        {
+            "directoryName": "standardValueSetTranslations",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "standardValueSetTranslation",
+            "xmlName": "StandardValueSetTranslation"
+        },
+        {
             "directoryName": "classes",
             "inFolder": false,
             "metaFile": true,
@@ -351,6 +407,13 @@
             "metaFile": true,
             "suffix": "trigger",
             "xmlName": "ApexTrigger"
+        },
+        {
+            "directoryName": "testSuites",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "testSuite",
+            "xmlName": "ApexTestSuite"
         },
         {
             "directoryName": "profiles",
@@ -374,6 +437,20 @@
             "xmlName": "CustomMetadata"
         },
         {
+            "directoryName": "profilePasswordPolicies",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "profilePasswordPolicy",
+            "xmlName": "ProfilePasswordPolicy"
+        },
+        {
+            "directoryName": "profileSessionSettings",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "profileSessionSetting",
+            "xmlName": "ProfileSessionSetting"
+        },
+        {
             "directoryName": "datacategorygroups",
             "inFolder": false,
             "metaFile": false,
@@ -388,6 +465,13 @@
             "xmlName": "RemoteSiteSetting"
         },
         {
+            "directoryName": "cspTrustedSites",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "cspTrustedSite",
+            "xmlName": "CspTrustedSite"
+        },
+        {
             "childXmlNames": [
                 "MatchingRule"
             ],
@@ -398,11 +482,32 @@
             "xmlName": "MatchingRules"
         },
         {
+            "directoryName": "duplicateRules",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "duplicateRule",
+            "xmlName": "DuplicateRule"
+        },
+        {
+            "directoryName": "cleanDataServices",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "cleanDataService",
+            "xmlName": "CleanDataService"
+        },
+        {
             "directoryName": "authproviders",
             "inFolder": false,
             "metaFile": false,
             "suffix": "authprovider",
             "xmlName": "AuthProvider"
+        },
+        {
+            "directoryName": "eclair",
+            "inFolder": false,
+            "metaFile": true,
+            "suffix": "geodata",
+            "xmlName": "EclairGeoData"
         },
         {
             "directoryName": "sites",
@@ -417,6 +522,13 @@
             "metaFile": false,
             "suffix": "channelLayout",
             "xmlName": "ChannelLayout"
+        },
+        {
+            "directoryName": "contentassets",
+            "inFolder": false,
+            "metaFile": true,
+            "suffix": "asset",
+            "xmlName": "ContentAsset"
         },
         {
             "childXmlNames": [
@@ -442,6 +554,13 @@
             "metaFile": false,
             "suffix": "community",
             "xmlName": "Community"
+        },
+        {
+            "directoryName": "ChatterExtensions",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "ChatterExtension",
+            "xmlName": "ChatterExtension"
         },
         {
             "directoryName": "callCenters",
@@ -477,6 +596,27 @@
             "metaFile": true,
             "suffix": "site",
             "xmlName": "SiteDotCom"
+        },
+        {
+            "directoryName": "networkBranding",
+            "inFolder": false,
+            "metaFile": true,
+            "suffix": "networkBranding",
+            "xmlName": "NetworkBranding"
+        },
+        {
+            "directoryName": "brandingSets",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "brandingSet",
+            "xmlName": "BrandingSet"
+        },
+        {
+            "directoryName": "lightningExperienceThemes",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "lightningExperienceTheme",
+            "xmlName": "LightningExperienceTheme"
         },
         {
             "directoryName": "samlssoconfigs",
@@ -533,6 +673,27 @@
             "metaFile": false,
             "suffix": "cachePartition",
             "xmlName": "PlatformCachePartition"
+        },
+        {
+            "directoryName": "assistantRecommendationTypes",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "assistantRecommendationType",
+            "xmlName": "AssistantRecommendationType"
+        },
+        {
+            "directoryName": "topicsForObjects",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "topicsForObjects",
+            "xmlName": "TopicsForObjects"
+        },
+        {
+            "directoryName": "emailservices",
+            "inFolder": false,
+            "metaFile": false,
+            "suffix": "xml",
+            "xmlName": "EmailServicesFunction"
         },
         {
             "directoryName": "settings",
