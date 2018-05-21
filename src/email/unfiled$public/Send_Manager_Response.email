@@ -1,0 +1,10 @@
+Dear {!Timesheet__c.CreatedBy},
+
+Your timesheet status has been updated:
+{!Timesheet__c.Status__c}.
+
+Please review the information above, if you have any questions please contact your manager.
+
+Regards,
+
+System.
