@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Select checkbox to pass into child component">
+	<aura:attribute name="cbox" type="String"></aura:attribute>
+</aura:event>

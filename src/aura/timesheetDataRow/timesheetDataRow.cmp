@@ -1,7 +1,11 @@
 <aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
     <aura:registerEvent name="navEvt" type="force:navigateToSObject"/>
+    <aura:registerEvent name="selected" type="c:passRecord" />   
     <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="checkSelected" type="boolean"/>
+    <aura:handler event="c:selectBox" action="{!c.gotEvent}" />
     <tr>
+        <td><ui:inputCheckbox aura:id="cboxRow" class="cBox" value="{!v.checkSelected}" change="{!c.sendRecord}"/></td>
         <td scope="row" onmouseenter="{!c.miniViewIn}" onmouseleave="{!c.miniViewOut}" id="{!v.data.Id}">
             <a onclick="{!c.navigate}"><div>{!v.data.Id}</div></a>
         	<div aura:id="{!'div' + v.data.Id}" id="{!'div' + v.data.Id}" class="slds-visible"></div>
@@ -15,5 +19,6 @@
         <td scope="row">{!v.data.Taxes__c}</td>
         <td scope="row">{!v.data.Type__c}</td>
         <td scope="row">{!v.data.Status__c}</td>
+        <td scope="row">{!v.data.Submitted__c}</td>
 	</tr>
 </aura:component>
