@@ -82,4 +82,20 @@
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
+    <rules>
+        <fullName>Update Timesheet</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Timesheet__c.Gross_Pay__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>5000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Timesheet__c.Status__c</field>
+            <operation>equals</operation>
+            <value>NOT SUBMITTED</value>
+        </criteriaItems>
+        <description>Update Timesheet if it meets gross pay criteria.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
 </Workflow>

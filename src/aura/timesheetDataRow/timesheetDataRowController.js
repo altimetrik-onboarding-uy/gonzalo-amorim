@@ -2,7 +2,6 @@
 	// RECORD ID EDIT
     doEdit: function(cmp, event, helper) { 
     	var editRecordEvent = $A.get("e.force:editRecord");
-        //console.log(editRecordEvent);
     	editRecordEvent.setParams({
          	"recordId": event.target.id
         });
@@ -11,7 +10,6 @@
 	// SWITCH TO DETAIL VIEW
 	navigate : function (cmp, event, helper) {
         var navEvt = $A.get("e.force:navigateToSObject");
-        //console.log(cmp.get("v.data"));
         navEvt.setParams({
             "recordId": cmp.get("v.data.Employee__c"),
             "slideDevName": "detail"
@@ -36,5 +34,23 @@
         if (document.getElementById(id).innerHTML != ""){
             document.getElementById(id).innerHTML = "";
         }
+    },
+    
+    // RECEIVED EVENT FROM PARENT CMP
+    gotEvent : function(cmp, event) {
+        var myReceivedBox = event.getParam('cbox')
+        var TheCheckBox = cmp.find("cboxRow");
+        TheCheckBox.set("v.value", myReceivedBox);
+    },
+    
+    // FIRE EVENT TO PARENT CMP
+    sendRecord : function(cmp, event) {
+        var appEvent = $A.get("e.c:passRecord");
+        var checkSelected = cmp.get("v.checkSelected");
+        var myRecord = cmp.get("v.data.Id");
+	        appEvent.setParams({
+                "recordId" : myRecord,
+                "isSelected" : checkSelected });
+	        appEvent.fire();
     }
 })

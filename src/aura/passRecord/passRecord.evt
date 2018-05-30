@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Pass record Ids to parent component">
+	<aura:attribute name="recordId" type="String"></aura:attribute>
+    <aura:attribute name="isSelected" type="Boolean"></aura:attribute>
+</aura:event>

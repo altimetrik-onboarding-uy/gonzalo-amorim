@@ -1,15 +1,55 @@
 <aura:component controller="tableListController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
-    <aura:attribute name="mydata" type="Object[]"/>
-    <aura:attribute name="mycolumns" type="List"/>
-    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
-	<!-- TOGGLE VIEW EVENT -->
-    <aura:handler name="view" event="c:toggleViewUpdate" action="{!c.handleViewUpdate}"/>
-    <aura:attribute name="toggler" type="boolean"/>
-    <aura:registerEvent name="updateView" type="c:toggleViewUpdate"/>
-    <!-- / TOGGLE VIEW EVENT -->
+    <!-- MY ATTRIBUTES -->
+    <aura:attribute name="mydata" type="Object[]"/> <!-- LOADS Timesheet__c INFO INTO MAIN OBJECT -->
+    <aura:attribute name="mycolumns" type="List"/> <!-- STATIC COLUMNS LIST -->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/> <!-- LOADS DATA ON DEMAND -->
+    <aura:attribute name="toggler" type="boolean" default="false"/> <!-- TOGGLER FOR CHANGING VIEWS -->
+    
+    <!-- SELECTION CHECKBOX EVENT & ATTRIBUTES -->
+    <aura:attribute name="cbox" type="String"/> 
+    <aura:attribute name="myBool" type="Boolean" default="false"/>
+    <aura:registerEvent name="mySelection" type="c:selectBox" />   
+    <!-- / SELECTION CHECKBOX EVENT & ATTRIBUTES -->
+    
+    <!-- RECORD ID RECEIVED FROM CHILD CMP (timesheetDataRow.cmp) -->
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="isSelected" type="Boolean" default="false"/>
+    <aura:attribute name="myRecordList" type="String[]" />
+    <aura:handler event="c:passRecord" action="{!c.updateList}" />
+    <!-- / RECORD ID RECEIVED FROM CHILD CMP (timesheetDataRow.cmp) -->
+    <!-- / MY ATTRIBUTES -->
+    
     <!-- PAGE HEADER -->
     <c:timesheetsHeader />
     <!-- / PAGE HEADER -->
+    
+    <!-- FILTER VIEW -->
+	<!-- BUTTON FOR SUBMITTING TIMESHEETS -->
+    <div class="slds-col slds-float--right slds-size_1-of-8 allBtn slds-button_outline-brand" style="padding-top:55px">
+        <lightning:button label="Submit Timesheets"
+                          onclick="{!c.submitSelected}">
+        </lightning:button>
+    </div>
+    <!-- / BUTTON FOR SUBMITTING TIMESHEETS -->
+    
+    <!-- OPTIONS FOR FILTER VIEW -->
+    <aura:attribute name="options" type="List" default="[
+        {'label': 'All', 'value': 'option3'},
+        {'label': 'Submitted', 'value': 'option1'},
+        {'label': 'Not Submitted', 'value': 'option2'}
+        ]"/>
+    
+    <aura:attribute name="value" type="String" default="option3" />
+        <lightning:radioGroup aura:id="myGroup"
+            name="radioButtonGroup"
+            label="Filter Timesheets"
+            options="{!v.options}"
+            value="{!v.value}"
+            onchange="{!c.toggleView}"
+            required="true" />
+    <!-- / OPTIONS FOR FILTER VIEW -->
+    
+    <!-- TOGGLE FOR FILTER VIEW -->
     <div class="slds-grid slds-gutters">
          <div class="slds-col slds-size_1-of-12">
                 <lightning:input aura:id="inputToggle" type="toggle"
@@ -20,12 +60,17 @@
                             messageToggleActive="Most Recent"
                             messageToggleInactive="All"
                             onchange="{!c.toggleView}"/>
-             </div>
-    </div>
+        </div>
+	<!-- / TOGGLE FOR FILTER VIEW -->
+    <!-- / FILTER VIEW -->
+    </div> 
+    
     <!-- TIMESHEETS TABLE -->
     <table class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer">
 		<thead>         
             <tr class="slds-text-heading--small">
+                <th scope="col" style="width: 50px;" class="slds-text-align--left"><span class="slds-truncate">
+                    <ui:inputCheckbox aura:id="cbox" class="cBox" change="{!c.checkAllBoxes}" value="{!v.myBool}"/></span></th>
                 <th scope="col"><span class="slds-truncate">Timesheet Detail</span></th>
 				<th scope="col"><span class="slds-truncate">Employee's Name</span></th>
 				<th scope="col"><span class="slds-truncate">Employee's Birthdate</span></th>
@@ -35,9 +80,11 @@
 				<th scope="col"><span class="slds-truncate">Gross Pay</span></th>
 				<th scope="col"><span class="slds-truncate">Taxes</span></th>
 				<th scope="col"><span class="slds-truncate">Type</span></th>
-				<th scope="col"><span class="slds-truncate">Submitted</span></th>
+				<th scope="col"><span class="slds-truncate">Status</span></th>
+                <th scope="col"><span class="slds-truncate">Submitted</span></th>
 			</tr>
 		</thead>
+        
         <!-- TIMESHEETS BODY - DATA COMPONENT -->
         <tbody>
             <c:timesheetData mydata="{!v.mydata}"/>

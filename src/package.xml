@@ -59,9 +59,9 @@
         <name>FlexiPage</name>
     </types>
     <types>
-        <members>Approval_Process_Trigger-5</members>
+        <members>Approval_Process_Trigger-8</members>
         <members>Send_Email_Timesheet</members>
-        <members>Update_Status-11</members>
+        <members>Update_Status-13</members>
         <name>Flow</name>
     </types>
     <types>
